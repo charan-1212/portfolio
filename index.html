@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chakradhar Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <script>
+    if (localStorage.getItem("loggedIn") !== "true") {
+      window.location.href = "login.html";
+    }
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: #e6e6fa;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+      font-size: 20px;
+    }
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    header {
+      text-align: center;
+      background: rgba(36, 0, 70, 0.6);
+      padding: 50px 10px;
+      color: #fff;
+      animation: fadeInUp 1s ease-out;
+      box-shadow: 0 0 30px rgba(172, 64, 255, 0.3);
+    }
+
+    header h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: #f72585;
+      text-shadow: 0 0 10px #f72585;
+    }
+
+    nav {
+      margin-top: 30px;
+    }
+
+    nav a button {
+      background: transparent;
+      color: #fff;
+      border: 2px solid #7209b7;
+      padding: 14px 28px;
+      margin: 8px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1.2rem;
+      position: relative;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    nav a button:hover {
+      background: #7209b7;
+      color: #fff;
+      box-shadow: 0 0 15px #7209b7, 0 0 30px #7209b7;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 50px auto;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 40px rgba(255, 255, 255, 0.05);
+      animation: fadeInUp 1.3s ease-out;
+    }
+
+    .profile {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    .profile img {
+      width: 200px;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 3px solid #4cc9f0;
+      box-shadow: 0 8px 30px #4cc9f080;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+
+    .profile img:hover {
+      transform: rotateY(10deg) rotateX(5deg) scale(1.05);
+      box-shadow: 0 10px 50px #4cc9f0;
+    }
+
+    .profile-info {
+      max-width: 500px;
+    }
+
+    .profile-info h2 {
+      font-size: 2.5rem;
+      color: #f72585;
+      margin-bottom: 15px;
+    }
+
+    .profile-info p {
+      font-size: 1.3rem;
+      color: #d6d6ff;
+      line-height: 1.8;
+    }
+
+    section {
+      margin-top: 40px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #b5179e;
+      margin-bottom: 15px;
+    }
+
+    ol {
+      padding-left: 25px;
+      color: #eee;
+      font-size: 1.3rem;
+    }
+
+    .form-section input,
+    .form-section button {
+      width: 100%;
+      max-width: 400px;
+      padding: 14px;
+      margin-bottom: 16px;
+      border-radius: 8px;
+      border: 1px solid #555;
+      font-size: 1.1rem;
+      background-color: #312244;
+      color: #fff;
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+
+    .form-section input:focus {
+      outline: none;
+      box-shadow: 0 0 10px #b5179e;
+    }
+
+    .form-section label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #aaa;
+      font-size: 1.1rem;
+    }
+
+    .form-section input[type="radio"],
+    .form-section input[type="checkbox"] {
+      width: auto;
+      margin-right: 12px;
+    }
+
+    .form-section button {
+      background: linear-gradient(to right, #f72585, #7209b7);
+      border: none;
+      font-weight: bold;
+      color: white;
+      font-size: 1.2rem;
+    }
+
+    .form-section button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 20px rgba(247, 37, 133, 0.5);
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      margin-top: 50px;
+      background-color: rgba(49, 34, 68, 0.7);
+      color: #aaa;
+      font-size: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .profile {
+        flex-direction: column;
+      }
+
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+
+      header h1 {
+        font-size: 2.3rem;
+      }
+
+      nav a button {
+        padding: 10px 20px;
+        font-size: 1rem;
+      }
+
+      .profile-info h2 {
+        font-size: 2rem;
+      }
+
+      .profile-info p {
+        font-size: 1.1rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      ol {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="particles-js"></div>
+
+  <header>
+    <h1>Welcome to Chakradhar's Portfolio</h1>
+    <nav>
+      <a href="about.html"><button>About</button></a>
+      <a href="skills.html"><button>Skills</button></a>
+      <a href="project.html"><button>Projects</button></a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="profile">
+      <img src="demo.jpg" alt="Chakradhar">
+      <div class="profile-info">
+        <h2>G. Chakradhar</h2>
+        <p>I am a passionate web developer focused on front-end technologies and user experience.</p>
+        <p>Currently pursuing B.Tech in <i>Saveetha School of Engineering</i>, Chennai.</p>
+      </div>
+    </div>
+
+    <section>
+      <h2>My Skills</h2>
+      <ol>
+        <li>Python</li>
+        <li>PPT Creator</li>
+        <li>HTML</li>
+      </ol>
+    </section>
+
+    <section class="form-section">
+      <h2>Contact Me</h2>
+      <form>
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male" style="display:inline">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female" style="display:inline">Female</label>
+
+        <label>Interests:</label>
+        <input type="checkbox" id="code" name="interest" value="code">
+        <label for="code" style="display:inline">Code</label>
+        <input type="checkbox" id="read" name="interest" value="read">
+        <label for="read" style="display:inline">Read</label>
+
+        <br><br>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </div>
+
+  <footer>
+    &copy; 2025 Chakradhar's Portfolio
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 60 },
+        "size": { "value": 3 },
+        "color": { "value": "#4cc9f0" },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#4cc9f0",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 2
+        }
+      },
+      "interactivity": {
+        "events": {
+          "onhover": { "enable": true, "mode": "repulse" }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
+"""
+
+# Save to file
+index_html_path = "/mnt/data/index.html"
+with open(index_html_path, "w", encoding="utf-8") as f:
+    f.write(full_index_html)
+
+index_html_path
