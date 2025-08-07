@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chakradhar Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.3.0/tsparticles.bundle.min.js"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #0f0f1a;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 40%; /* Only left side like your reference image */
+      height: 100%;
+      z-index: -10;
+    }
+
+    header {
+      text-align: center;
+      padding: 80px 20px 60px;
+      position: relative;
+      z-index: 1;
+    }
+
+    header h1 {
+      font-size: 48px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #00f7ff, #ff00e6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: fadeInDown 1.2s ease-out;
+    }
+
+    header p {
+      font-size: 20px;
+      color: #ccc;
+      animation: fadeInUp 1.5s ease-out;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 50px;
+    }
+
+    .button-container a {
+      text-decoration: none;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      font-size: 18px;
+      border: none;
+      border-radius: 40px;
+      background: linear-gradient(45deg, #00f7ff, #ff00e6);
+      color: #fff;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 25px rgba(255, 0, 230, 0.6);
+    }
+
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 34px;
+      }
+
+      .btn {
+        padding: 12px 22px;
+        font-size: 16px;
+      }
+
+      #particles-js {
+        width: 100%; /* Full width on mobile */
+      }
+    }
+
+    .svg-divider {
+      width: 100%;
+      margin-top: -2px;
+      display: block;
+      line-height: 0;
+    }
+
+    .svg-divider path {
+      animation: waveMove 10s linear infinite alternate;
+    }
+
+    @keyframes waveMove {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50px); }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Animated Lines Background -->
+  <div id="particles-js"></div>
+
+  <!-- Header Content -->
+  <header>
+    <h1>Chakradhar Portfolio</h1>
+    <p>This is my digital space to showcase skills and work.</p>
+
+    <div class="button-container">
+      <a href="#" class="btn">Python</a>
+      <a href="https://gamma.app/folders/walpurgis-al62kzy0tiofxq3" target="_blank" class="btn">PPT</a>
+      <a href="#" class="btn">HTML</a>
+    </div>
+  </header>
+
+  <!-- SVG Section Divider -->
+  <svg class="svg-divider" viewBox="0 0 1440 150" preserveAspectRatio="none">
+    <path fill="#0f0f1a" fill-opacity="1" d="M0,32L80,42.7C160,53,320,75,480,90.7C640,107,800,117,960,101.3C1120,85,1280,43,1360,21.3L1440,0L1440,150L1360,150C1280,150,1120,150,960,150C800,150,640,150,480,150C320,150,160,150,80,150L0,150Z"></path>
+  </svg>
+
+  <!-- tsParticles Configuration Script -->
+  <script>
+    tsParticles.load("particles-js", {
+      fullScreen: { enable: false },
+      background: { color: { value: "transparent" } },
+      fpsLimit: 60,
+      particles: {
+        number: {
+          value: 20,
+          density: { enable: true, area: 800 }
+        },
+        color: { value: "#00cfff" },
+        shape: { type: "circle" },
+        opacity: {
+          value: 0.9,
+          random: false
+        },
+        size: {
+          value: 4,
+          random: true
+        },
+        move: {
+          enable: true,
+          speed: 0.6,
+          direction: "none",
+          random: false,
+          straight: false,
+          outModes: "out"
+        },
+        links: {
+          enable: true,
+          distance: 130,
+          color: "#00cfff",
+          opacity: 0.3,
+          width: 1
+        }
+      },
+      interactivity: {
+        events: {
+          onHover: { enable: false },
+          onClick: { enable: false },
+          resize: true
+        }
+      },
+      detectRetina: true
+    });
+  </script>
+</body>
+</html>
