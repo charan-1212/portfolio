@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skills & Tools - Chakradhar</title>
+
+  <!-- Particle.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <!-- Tilt.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #0f051d, #1a0633);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 80px 20px 40px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 3.2rem;
+      margin-bottom: 60px;
+      color: transparent;
+      background: linear-gradient(to right, #00f0ff, #f0f, #a0f);
+      -webkit-background-clip: text;
+      background-clip: text;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid rgba(255,255,255,0.7);
+      width: 0;
+      animation: typing 3s steps(40, end) forwards, blink 0.8s step-end infinite;
+    }
+
+    @keyframes typing {
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    section {
+      margin: 40px auto;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.15);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      backdrop-filter: blur(15px);
+    }
+
+    section:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 40px rgba(0, 255, 255, 0.25);
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: #00f0ff;
+      text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+    }
+
+    section p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #f0f0f0;
+      text-align: justify;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 0 20px;
+      font-size: 0.9rem;
+      color: #ccc;
+      text-shadow: 0 0 3px rgba(255, 255, 255, 0.2);
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.1rem;
+      }
+
+      section h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Particle Background -->
+  <div id="particles-js"></div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h1>Skills & Tools</h1>
+
+    <section data-tilt>
+      <h2>Python (200 words)</h2>
+      <p>Python is a powerful, high-level programming language known for its simplicity and readability. Created by Guido van Rossum and released in 1991, Python emphasizes clean syntax that is easy to learn, making it a favorite among beginners and professionals alike. It supports multiple programming paradigms, including object-oriented, procedural, and functional programming.</p>
+      <p>Python is highly versatile. It’s widely used in web development, data science, artificial intelligence, machine learning, automation, software development, and even game development. Popular frameworks like Django and Flask are used for web apps, while libraries such as NumPy, pandas, TensorFlow, and Matplotlib serve data and AI projects.</p>
+    </section>
+
+    <section data-tilt>
+      <h2>PPT Creator (200 words)</h2>
+      <p>A PPT Creator, or PowerPoint Presentation Creator, is a tool or software used to design, organize, and present slideshows for business, education, marketing, or personal use. Microsoft PowerPoint is the most well-known platform, but there are many others including Google Slides, Canva, Prezi, and AI-based tools like Beautiful.ai and Tome.</p>
+      <p>A typical PPT creator lets users combine text, images, charts, videos, transitions, and animations into slides. Users can customize layouts, fonts, color schemes, and add professional templates to maintain visual consistency. For corporate use, PPTs are often designed to align with brand guidelines, including logos, color palettes, and fonts.</p>
+    </section>
+
+    <section data-tilt>
+      <h2>HTML (200 words)</h2>
+      <p>HTML, or HyperText Markup Language, is the foundational language used to create web pages. It defines the structure of content on the internet. HTML uses "tags" to organize text, images, links, videos, and other elements, allowing browsers to render pages properly.</p>
+      <p>HTML is often used in combination with CSS (Cascading Style Sheets) for styling and JavaScript for interactivity. Together, they form the core technologies for front-end web development. HTML5, the latest version, introduced features like audio/video support, canvas for graphics, and improved semantic elements. Mastery of HTML enables the creation of structured, accessible, and SEO-friendly websites.</p>
+    </section>
+  </div>
+
+  <footer>
+    &copy; 2025 Chakradhar – Interactive Skills Page
+  </footer>
+
+  <!-- Particle JS Config -->
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 }},
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.3 },
+        size: { value: 3, random: true },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#ffffff",
+          opacity: 0.2,
+          width: 1
+        },
+        move: { enable: true, speed: 2, out_mode: "bounce" }
+      },
+      interactivity: {
+        events: {
+          onhover: { enable: true, mode: "repulse" },
+          onclick: { enable: true, mode: "push" }
+        },
+        modes: {
+          repulse: { distance: 100 },
+          push: { particles_nb: 4 }
+        }
+      },
+      retina_detect: true
+    });
+  </script>
+</body>
+</html>
